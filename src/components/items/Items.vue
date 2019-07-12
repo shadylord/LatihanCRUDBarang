@@ -55,7 +55,7 @@ export default {
         this.items = items.data;
 
         if (this.items.length === 0) {
-          this.loading = "There is no data yet.";
+          this.loading = "There are no data yet.";
         }
       })
       .catch(error => console.log(error));
@@ -65,7 +65,11 @@ export default {
       this.items.splice(index, 1);
       this.success = true;
 
-      setTimeout(() => (this.success = false), 3000);
+      if (this.items.length === 0) {
+        this.loading = "There are no data yet.";
+      } else {
+        setTimeout(() => (this.success = false), 3000);
+      }
     }
   },
   components: {

@@ -1,11 +1,6 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-12 col-sm-6 col-md-8">
-      <div class="alert alert-dismissible alert-success mb-5" v-if="this.success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>Sukses!</strong> Data berhasil ditambahkan. Anda akan dialihkan secara otomatis dalam 3 detik.
-      </div>
-
       <form v-on:submit.prevent="addBarang">
         <div class="form-group">
           <label for="namaBarang">Nama Barang</label>
@@ -66,8 +61,7 @@ export default {
         nama: "",
         harga: ""
       },
-      submitted: false,
-      success: false
+      submitted: false
     };
   },
   validations: {
@@ -95,11 +89,7 @@ export default {
           ...this.item
         })
         .then(item => {
-          this.success = true;
-
-          setTimeout(() => {
-            this.$router.push("/items");
-          }, 3000);
+          this.$router.push("/items");
         })
         .catch(error => console.log(error));
     }
