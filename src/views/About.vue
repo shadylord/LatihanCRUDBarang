@@ -4,7 +4,11 @@
     <hr />
 
     <div class="card mb-5">
-      <img src="../image/blooms.jpg" class="card-img-top" alt="Author" />
+      <img
+        src="https://images.wallpaperscraft.com/image/rose_red_flower_bud_119651_3840x2400.jpg"
+        class="card-img-top"
+        alt="Author"
+      />
       <div class="card-body">
         <h5 class="card-title">About Author</h5>
 
